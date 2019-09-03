@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane fx:id="mainViewPane" onDragDropped="#handleOnDragDropped" onDragEntered="#handleOnDragEntered" onDragExited="#handleOnDragExited" onDragOver="#handleOnDragOver" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.portalmedia.embarc.gui.MainViewController">
+   <children>
+      <SplitPane layoutX="356.0" layoutY="200.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="-Infinity" minWidth="-Infinity">
+		     <children>
+		        <SplitPane dividerPositions="0.30351170568561875" layoutX="278.0" layoutY="186.0" prefHeight="540.0" prefWidth="898.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		          <items>
+		            <AnchorPane minHeight="0.0" minWidth="360.0">
+		                 <children>
+		                    <SplitPane layoutX="-12.0" layoutY="155.0" orientation="VERTICAL" prefHeight="538.0" prefWidth="197.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+		                      <items>
+		                        <fx:include source="MetadataEditor.fxml" />
+		                      </items>
+		                    </SplitPane>
+		                 </children>
+		              </AnchorPane>
+		            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+			           <children>
+			              <SplitPane dividerPositions="0.8807339449541285" layoutX="288.0" layoutY="150.0" orientation="VERTICAL" prefHeight="547.0" prefWidth="753.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			                <items>
+			                  <fx:include source="CenterPane.fxml" />
+							  <fx:include source="WorkingSummary.fxml" />
+			                </items>
+			              </SplitPane>
+			           </children>
+					</AnchorPane>
+		          </items>
+		        </SplitPane>
+		     </children>
+		  </AnchorPane>
+        </items>
+      </SplitPane>
+      <Pane fx:id="addFilesOverlayPane" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/> 
+   </children>
+</AnchorPane>

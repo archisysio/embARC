@@ -1,0 +1,112 @@
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+        	url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'edu.sc.seis.gradle:launch4j:2.4.4'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.2'
+        classpath 'de.jensd:fontawesomefx-commons:9.1.2'
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+        classpath "edu.sc.seis:macAppBundle:2.3.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'application'
+apply plugin: 'distribution'
+apply plugin: 'launch4j'
+apply plugin: "edu.sc.seis.macAppBundle"
+
+mainClassName = "com.portalmedia.embarc.gui.Main"
+
+
+sourceSets.main {
+    java {
+        srcDirs = ['src/main']
+    }
+    resources {
+        srcDirs = ['src/main', 'src/resources']
+    }
+}
+
+sourceSets.test {
+    java {
+        srcDirs = ['src/tests']
+    }
+    resources {
+        srcDir 'tests/resources'
+    }
+}
+
+
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version,
+                   'Main-Class': 'com.portalmedia.embarc.gui.Main'
+    }
+    
+}
+
+
+macAppBundle {
+    mainClassName = "com.portalmedia.embarc.gui.Main"
+    icon = "${projectDir}/icons/embarc.icns"
+    bundleJRE = true
+    backgroundImage = "${projectDir}/icons/embARC.png"
+}
+
+shadowJar {
+    archiveName = 'embARC.jar'
+    baseName = 'embARC'
+}
+
+launch4j {
+    mainClassName = "com.portalmedia.embarc.gui.Main"
+    outfile = 'embARC.exe'
+    copyConfigurable = project.tasks.shadowJar.outputs.files
+    jar = "lib/${project.tasks.shadowJar.archiveName}"
+    icon = "${projectDir}/icons/embarc_gRr_icon.ico"
+    maxHeapSize = 6000
+    jvmOptions=['-XX:+UseG1GC','-Xms64m']
+    maxHeapPercent = 10
+}
+
+
+jfx {
+    mainClass = 'com.portalmedia.embarc.gui.Main'
+    vendor = 'PortalMedia'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'  
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.1'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+    compile 'org.dizitart:nitrite:3.1.0'
+    compile 'de.jensd:fontawesomefx-emojione:2.2.7-2'
+    compile 'de.jensd:fontawesomefx-fontawesome:4.7.0-5'
+    compile 'de.jensd:fontawesomefx-icons525:3.0.0-4'
+    compile 'de.jensd:fontawesomefx-materialdesignfont:1.7.22-4'
+    compile 'de.jensd:fontawesomefx-materialicons:2.2.0-5'
+    compile 'de.jensd:fontawesomefx-octicons:4.3.0-5'
+    compile 'de.jensd:fontawesomefx-weathericons:2.0.10-5'
+	implementation 'org.controlsfx:controlsfx:8.40.14'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile gradleApi()
+}
+
+test {
+    systemProperties 'property': 'value'
+}

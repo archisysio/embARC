@@ -1,0 +1,164 @@
+.split-pane *.split-pane-divider {
+	-fx-padding: 0 1 0 1;
+	-fx-background-color: transparent;
+}
+
+.root {
+	-fx-focus-color: transparent;
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;	
+}
+
+.table-view:focused .table-row-cell:focused {
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+ 	-fx-focus-color: transparent;
+}
+
+.write-files-icon{
+	-fx-text-fill: #FF3D00;
+	-fx-fill: #FF3D00;
+	-fx-font-size: 25px;
+	-fx-font-family: "FontAwesome";
+}
+.fadgi-o-warning{
+	-fx-text-fill: #FFD740;
+	-fx-fill: #FFD740;
+}
+.fadgi-r-warning{
+	-fx-text-fill: #FF9100;
+	-fx-fill: #FF9100;
+}
+.fadgi-sr-warning{
+	-fx-text-fill: #FF3D00;
+	-fx-fill: #FF3D00;
+}
+.smpte-c-warning{
+	-fx-text-fill: #AAAAAA;
+	-fx-fill: #AAAAAA;
+}
+
+.editor-header-box {
+	-fx-background-color:#496879;
+	-fx-padding: 10 0 10 10;
+}
+.editor-header{
+	-fx-text-fill: #ffffff;
+	-fx-font-weight: bold;
+	-fx-padding: 10 0 0 0;
+}
+.lookup-value{
+	-fx-text-fill: #ffffff;
+	-fx-text-alignment: center;
+	-fx-padding: 0 0 0 10;
+}
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent;
+}
+.accordion .titled-pane .title {
+    -fx-background-color: #AAAAAA;
+	-fx-text-fill: #ffffff;
+}
+.uneditable-column {
+	-fx-text-fill: #8d8d8d;
+}
+
+.table-row-cell {
+	-fx-table-cell-border-color: #eeeeee;
+}
+
+.table-row-cell:selected .text {
+	-fx-fill: black;
+}
+
+.table-row-cell:selected {
+	-fx-background-color: #7EFFFE;
+}
+
+.no-top-border {
+	-fx-border-width: 0 1 1 1;
+}
+
+
+.table-view .column-header.general-section {
+    -fx-background-color: #eceff1;
+}
+.table-view .column-header.general-section.current {
+    -fx-background-color: #cfd8dc;
+}
+
+.table-view .column-header.file-info-section {
+	-fx-background-color: #e8f5e9;
+}
+.table-view .column-header.file-info-section.current {
+	-fx-background-color: #c8e6c9;
+}
+
+.table-view .column-header.image-info-section {
+	-fx-background-color: #e8eaf6;
+}
+.table-view .column-header.image-info-section.current {
+	-fx-background-color: #c5cae9;
+}
+
+.table-view .column-header.image-source-section {
+	-fx-background-color: #fffde7;
+}
+.table-view .column-header.image-source-section.current {
+	-fx-background-color: #fff9c4;
+}
+
+.table-view .column-header.film-section {
+	-fx-background-color: #e1f5fe;
+}
+.table-view .column-header.film-section.current {
+	-fx-background-color: #b3e5fc;
+}
+
+.table-view .column-header.tv-section {
+	-fx-background-color: #fff3e0;
+}
+.table-view .column-header.tv-section.current {
+	-fx-background-color: #ffe0b2;
+}
+
+.table-view .column-header.user-section {
+	-fx-background-color: #fbe9e7;
+}
+.table-view .column-header.user-section.current {
+	-fx-background-color: #ffccbc;
+}
+
+
+.mde.general-section {
+    -fx-background-color: #eceff1;
+}
+.mde.file-info-section {
+	-fx-background-color: #e8f5e9;
+}
+.mde.image-info-section {
+	-fx-background-color: #e8eaf6;
+}
+.mde.image-source-section {
+	-fx-background-color: #fffde7;
+}
+.mde.film-section {
+	-fx-background-color: #e1f5fe;
+}
+.mde.tv-section {
+	-fx-background-color: #fff3e0;
+}
+.mde.user-section {
+	-fx-background-color: #fbe9e7;
+}
+
+.popout-icon {
+	-fx-fill: #496879;
+}
+
+
+/* TEST */
+
+.scroll-pane > .viewport  { -fx-background-color: transparent; }
