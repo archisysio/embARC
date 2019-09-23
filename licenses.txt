@@ -1,5 +1,5 @@
 embARC
-embARC v.1 will be released as an open source application with specific license terms TBD but will fall in line with FADGI policy which supports as unrestricted a license as possible (for example but not limited to the 2-Clause BSD License or 3-Clause BSD License).  This version of embARC is for testing purposes and as such, carries no specific license.
+See LICENSE.md
 
 
 FontAwesome
